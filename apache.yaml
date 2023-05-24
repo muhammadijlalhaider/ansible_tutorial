@@ -1,0 +1,26 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: First apache2 package
+    apt: 
+       name: apache2  
+       state: latest
+
+  - name: First apache2 uninstall package
+    apt:
+       name: apache2
+       state: absent
+
+
+  - name: add php support fo apache
+    apt:
+       name: libapache2-mod-php
+       state: latest
+
+  - name: uninstall php support fo apache
+    apt:
+       name: libapache2-mod-php
+       state: absent

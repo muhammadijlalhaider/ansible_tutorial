@@ -1,0 +1,8 @@
+- name: install Git
+  yum:
+    name: git
+    state: present
+  become: yes
+  become_method: su
+  bcome_method: node1
+  become_exe: "sudo su -"
